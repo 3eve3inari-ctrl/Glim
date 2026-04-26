@@ -10,26 +10,29 @@ A Claude skill that runs solo tabletop RPG campaigns using a lightweight d20 sys
 2. In [claude.ai](https://claude.ai), open **Settings → Customize → Skills**
 3. Click **+ → Upload a skill** and select `GlimGame.zip`
 4. Toggle the skill **ON** in your Skills list
-5. Start a new conversation and say something like *"let's start a Glim campaign"* or *"run a solo RPG"* — the skill auto-triggers from the description
+5. Start a new conversation and say *"let's start a Glim campaign"* or *"run a solo RPG"* — the skill auto-triggers from the description
 
 > **Prerequisite:** Code execution & file creation must be enabled (Settings → Capabilities). The skill needs these to run dice rolls, manage clocks, and pack/unpack `.glim` save bundles.
 
-### Heads up: this skill uses a *lot* of tokens on spin-up
-
-Activating Glim loads several reference files into context (rules, oracle guide, clocks system, current campaign state, default-setting lore). Expect **15–30K tokens of context just on activation** — and that grows as your campaign accumulates lore, NPCs, and history.
-
-On **Free / Pro plans**, this can chew through your daily message quota much faster than a typical chat. Sustained campaign play (many sessions, large lore) is best on **Max / Team / Enterprise** plans, or via Claude Code with API billing where token usage is line-item visible.
-
-If you're on a tighter plan, you can still play — just expect shorter sessions, and use the `.glim` save/load to checkpoint frequently rather than running long single sessions.
+> **A note on context size:** Glim loads reference files into context — about **3K tokens** just to activate, growing to **15–25K** when an active campaign is loaded with state and lore. That's well within Claude's 200K window, but uses your daily message quota faster than a typical chat. Most noticeable on **Free plan**; comfortable on **Pro / Max / Team / Enterprise**.
 
 ---
 
-## What Makes It Different
+## Why Glim
 
-- **Three-die oracle.** Die 1 (d6) is yes/no with a likelihood-weighted threshold. Die 2 (d6) is elaboration (`but` / plain / `and`). Die 3 (d10) is boon/bane — always rolled, 20% of the time it forces fate to push. Mechanism over GM mood — keeps Claude from drifting toward agreeable narration.
+**Long-running campaign memory across conversations.** Most Claude chats forget when you close the tab. Glim packs your campaign state — character sheet, NPCs, plot threads, clocks, lore, session log — into a portable `.glim` bundle. Re-upload it next session and pick up exactly where you left off. Campaigns can span dozens of sessions across weeks or months without losing the thread.
+
+**A GM who can't quietly be too kind.** Claude defaults toward agreeable narration — the helpful instinct that makes it a great assistant makes it a soft Game Master. Glim's always-rolled **boon/bane (d10)** combined with **likelihood-weighted yes/no oracles** force complications, twists, and rough outcomes Claude wouldn't choose on its own. The mechanism is the discipline. You feel the difference when an easy plan goes sideways because the dice said so, not because the model decided to be charitable.
+
+**A lightweight system that fits any setting.** Core mechanic is `1d20 + Stat + Proficiency` against a DC — no genre lock-in. Cyberpunk, dark fantasy, slice-of-life, post-apocalyptic, sword-and-sandal, mecha — all work. The interview at session zero shapes the world to whatever you bring. Or pick the published **default Glim setting** (frontier-survival low-fantasy with indigenous shapeshifters and a colonial-charter palisade) for an immediate jumping-off point if you don't have a world in mind.
+
+---
+
+## How It Works
+
+- **Three-die oracle.** Die 1 (d6) is yes/no with a likelihood-weighted threshold (very-likely → yes on 2-6, fifty-fifty → yes on 4-6, etc). Die 2 (d6) is elaboration (`but` / plain / `and`). Die 3 (d10) is always-rolled boon/bane that promotes elaboration one step on PC favorability. The d10 is the keystone — 20% of the time, fate forces a complication or a windfall the GM didn't choose.
 - **JSON-backed pressure clocks.** Sizes by scope (4/6/8 segments for tactical/encounter/campaign), surfaced to the player when created and ticked, archived with resolution narrative on completion.
-- **Default setting + interview override.** Players can pick the published "Glim" setting (`Examples/Glim-Default/`) for an immediate jumping-off point, or build their own world through the interview.
-- **Save/load via `.glim` bundles.** Campaigns pack into a single shareable file. Working scratch state stays local and isn't bundled.
+- **`.glim` save bundles.** The whole campaign packed into a single shareable file. Working scratch state stays local and isn't bundled.
 
 ---
 
