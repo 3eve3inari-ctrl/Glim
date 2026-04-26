@@ -1,0 +1,100 @@
+{
+  "active": {
+    "bear-line-patience": {
+      "name": "Bear-line patience",
+      "size": 6,
+      "filled": 4,
+      "scope": "encounter",
+      "created": "Session 1",
+      "steps": [
+        {
+          "date": "Session 1",
+          "delta": 2,
+          "trigger": "baseline — palisade built on summer-gathering meadow; first ranging cut sign across bear-line track"
+        },
+        {
+          "date": "Session 2",
+          "delta": 1,
+          "trigger": "Toren and Halric pushed deep east searching for Bren — oracle bane locked in 'No, and...' on whether they were unobserved"
+        },
+        {
+          "date": "Session 3",
+          "delta": 1,
+          "trigger": "Hold dispatched second scout (Halric again) into the same eastern range despite no contact attempt with the bear-line"
+        }
+      ]
+    },
+    "naturalists-research": {
+      "name": "Kenric's Glim-density mapping",
+      "size": 8,
+      "filled": 3,
+      "scope": "campaign",
+      "created": "Session 1",
+      "steps": [
+        {
+          "date": "Session 1",
+          "delta": 1,
+          "trigger": "Toren's first apprenticeship session — Kenric sketches a preliminary density grid"
+        },
+        {
+          "date": "Session 2",
+          "delta": 1,
+          "trigger": "Kenric extends the grid south after Toren's report of bright-Glim near the bear-stone"
+        },
+        {
+          "date": "Session 3",
+          "delta": 1,
+          "trigger": "Kenric notices the brightness pattern is centered slightly east of the bear-stone — not natural geography"
+        }
+      ]
+    },
+    "second-scout-missing": {
+      "name": "Halric overdue from the eastern ridge",
+      "size": 4,
+      "filled": 2,
+      "scope": "tactical",
+      "created": "Session 3",
+      "steps": [
+        {
+          "date": "Session 3",
+          "delta": 1,
+          "trigger": "Halric failed to return by sundown"
+        },
+        {
+          "date": "Session 3",
+          "delta": 1,
+          "trigger": "no signal-fire visible from the watchtower at second watch"
+        }
+      ]
+    }
+  },
+  "completed": [
+    {
+      "id": "captains-assessment",
+      "name": "Captain Daven's assessment of Toren",
+      "size": 6,
+      "filled": 6,
+      "scope": "encounter",
+      "created": "Session 1",
+      "completed": "Session 1",
+      "resolution": "Toren passed. Captain granted ranging permission within a half-day of the Hold and assigned her to the Bren search detail. Trust is provisional, not warm. The captain noted in her journal: 'Quiet. Watches more than she speaks. Useful.'",
+      "steps": [
+        {
+          "date": "Session 1",
+          "delta": 2,
+          "trigger": "first formal interview — Toren answered short and honest"
+        },
+        {
+          "date": "Session 1",
+          "delta": 2,
+          "trigger": "joined the captain on a wall-walk; identified two flaws in the watch rotation"
+        },
+        {
+          "date": "Session 1",
+          "delta": 2,
+          "trigger": "stood her ground when the captain pressed about Glim apprenticeship — boon on disposition oracle softened the captain's response"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Build artifacts
+GlimGame.zip
+
+# Local IDE / agent state
+.claude/
+
+# Personal play campaigns (moved out of the published bundle)
+DragonGlim/
+Mira/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
